@@ -274,7 +274,7 @@
               <PropertyValue z:Id="i34">
                 <PropertyName>FilePath</PropertyName>
                 <_dataType>Expression</_dataType>
-                <_expression>@"DoRegex.pix"</_expression>
+                <_expression>@"RegexScripts\DoRegex.pix"</_expression>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
@@ -363,7 +363,7 @@ match_ans.Groups[1].Value.Replace(",", ".") :
               <PropertyValue z:Id="i46">
                 <PropertyName>FilePath</PropertyName>
                 <_dataType>Expression</_dataType>
-                <_expression>@"DoRegex.pix"</_expression>
+                <_expression>@"RegexScripts\DoRegex.pix"</_expression>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
@@ -424,7 +424,7 @@ match_ans.Groups[1].Value.Replace(",", ".") :
                 <PropertyName>Value</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>bool_success ? 
-match_ans.Groups[1].Value : 
+Regex.Replace(match_ans.Groups[1].Value, @"(\\)|(\/)", ".") : 
 "Ошибка"</_expression>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
@@ -452,7 +452,7 @@ match_ans.Groups[1].Value :
               <PropertyValue z:Id="i58">
                 <PropertyName>FilePath</PropertyName>
                 <_dataType>Expression</_dataType>
-                <_expression>@"DoRegex.pix"</_expression>
+                <_expression>@"RegexScripts\DoRegex.pix"</_expression>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
@@ -541,7 +541,7 @@ match_ans.Groups[1].Value :
               <PropertyValue z:Id="i70">
                 <PropertyName>Value</PropertyName>
                 <_dataType>Expression</_dataType>
-                <_expression>$"{row_item["Номер"]}_" + 
+                <_expression>$"{(row_item["Номер"] != "Ошибка" ? row_item["Номер"]:Path.GetFileNameWithoutExtension(dict_parameters["filePath"]))}_" + 
 $"{String.Join("-", new HashSet&lt;int&gt;() {int_lastDocNumber - set_currentDocument.Count + 1, int_lastDocNumber})}" +
 $".pdf"</_expression>
                 <_value i:nil="true" />
@@ -602,10 +602,32 @@ $".pdf"</_expression>
       </AbstractStep>
       <AbstractStep z:Id="i75" i:type="ExecutedStep">
         <Childs />
-        <Id>df76a200-49ba-438b-9523-c66a0d15f937</Id>
+        <Id>3f01d966-9d6d-461a-8795-185c4068d5bb</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
           <PropertyValue z:Id="i76">
+            <PropertyName>NewFolderPath</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>Path.Combine($"{dict_config["OutputFolderPath"]}", 
+DateTime.Today.ToString(@"yyyy\/MM"), 
+Path.GetFileNameWithoutExtension(dict_parameters["filePath"]))</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Skip</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text></Text>
+        <_activityFullName>Activities.Files.CreateFolder</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i77" i:type="ExecutedStep">
+        <Childs />
+        <Id>df76a200-49ba-438b-9523-c66a0d15f937</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i78">
             <PropertyName>FromPdfPath</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>Path.Combine($"{dict_config["WorkingFolderPath"]}", "PDF", 
@@ -613,15 +635,17 @@ Path.ChangeExtension(Path.GetFileName(dict_parameters["filePath"]),"pdf"))</_exp
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i77">
+          <PropertyValue z:Id="i79">
             <PropertyName>ToPdfPath</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>Path.Combine($"{dict_config["OutputFolderPath"]}", 
-DateTime.Today.ToString("yyyy.MM"), $"{DateTime.Today.ToString("yyyy.MM.dd")}.xlsx")</_expression>
+DateTime.Today.ToString(@"yyyy\/MM"), 
+Path.GetFileNameWithoutExtension(dict_parameters["filePath"]), 
+$"{(row_item["Номер"] != "Ошибка" ? row_item["Номер"]:Path.GetFileNameWithoutExtension(dict_parameters["filePath"]))}_{set_currentDocument.Count}.pdf")</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i78">
+          <PropertyValue z:Id="i80">
             <PropertyName>Range</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>String.Join(":", new HashSet&lt;int&gt;() {int_lastDocNumber - set_currentDocument.Count + 1, int_lastDocNumber})</_expression>
@@ -652,37 +676,37 @@ DateTime.Today.ToString("yyyy.MM"), $"{DateTime.Today.ToString("yyyy.MM.dd")}.xl
     <d2p1:string>System.Text.RegularExpressions</d2p1:string>
   </Namespaces>
   <Params>
-    <Parameter z:Id="i79">
+    <Parameter z:Id="i81">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>str_type</Name>
       <TypeString>System.String</TypeString>
     </Parameter>
-    <Parameter z:Id="i80">
+    <Parameter z:Id="i82">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>set_currentDocument</Name>
       <TypeString>System.Collections.Generic.HashSet`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i81">
+    <Parameter z:Id="i83">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dt_results</Name>
       <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
-    <Parameter z:Id="i82">
+    <Parameter z:Id="i84">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>int_lastDocNumber</Name>
       <TypeString>System.Int32</TypeString>
     </Parameter>
-    <Parameter z:Id="i83">
+    <Parameter z:Id="i85">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_config</Name>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i84">
+    <Parameter z:Id="i86">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_parameters</Name>
