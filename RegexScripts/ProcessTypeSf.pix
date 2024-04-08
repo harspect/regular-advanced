@@ -75,7 +75,7 @@
           <PropertyValue z:Id="i11">
             <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression>new List&lt;String&gt;(){@"№\s*п/п[\d\s-]*№\s?([^\s]+)"}</_expression>
+            <_expression>new List&lt;String&gt;(){@"№\s*п/п[\d\s-]*№\s?([^\s]+)", @"счет-фактура\s*№\s*([\d]+)\s"}</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
