@@ -630,21 +630,121 @@ Regex.IsMatch(str_fileText, @"груз.*принял", RegexOptions.IgnoreCase |
                                           <AbstractStep z:Id="i75" i:type="ExecutedStep">
                                             <Childs>
                                               <AbstractStep z:Id="i76" i:type="ExecutedStep">
-                                                <Childs />
-                                                <Id>5a9d9543-ae84-4b61-b0b0-afe9b1d759c4</Id>
+                                                <Childs>
+                                                  <AbstractStep z:Id="i77" i:type="ExecutedStep">
+                                                    <Childs>
+                                                      <AbstractStep z:Id="i78" i:type="ExecutedStep">
+                                                        <Childs />
+                                                        <Id>92548b3f-ba10-4846-b6c6-d13913776aae</Id>
+                                                        <Parent z:Ref="i77" />
+                                                        <PropertyValues>
+                                                          <PropertyValue z:Id="i79">
+                                                            <PropertyName>Value</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>int_lastdocNumber + 1</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                          <PropertyValue z:Id="i80">
+                                                            <PropertyName>To</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>int_lastdocNumber</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                        </PropertyValues>
+                                                        <SelectedOptionId i:nil="true" />
+                                                        <EnableStatus>true</EnableStatus>
+                                                        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                        <RetryCount>-1</RetryCount>
+                                                        <Text>Увеличение счетчика в цикле</Text>
+                                                        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+                                                      </AbstractStep>
+                                                      <AbstractStep z:Id="i81" i:type="ExecutedStep">
+                                                        <Childs />
+                                                        <Id>9f1e9c03-45d9-49ab-848b-e8a39d16a72a</Id>
+                                                        <Parent z:Ref="i77" />
+                                                        <PropertyValues>
+                                                          <PropertyValue z:Id="i82">
+                                                            <PropertyName>Value</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>list_documents[int_lastdocNumber - 1]</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                          <PropertyValue z:Id="i83">
+                                                            <PropertyName>To</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>str_document</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                        </PropertyValues>
+                                                        <SelectedOptionId i:nil="true" />
+                                                        <EnableStatus>true</EnableStatus>
+                                                        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                        <RetryCount>-1</RetryCount>
+                                                        <Text>Получение str_document</Text>
+                                                        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+                                                      </AbstractStep>
+                                                      <AbstractStep z:Id="i84" i:type="ExecutedStep">
+                                                        <Childs />
+                                                        <Id>1533b63e-b96a-4fc3-9345-e4f164896be9</Id>
+                                                        <Parent z:Ref="i77" />
+                                                        <PropertyValues>
+                                                          <PropertyValue z:Id="i85">
+                                                            <PropertyName>CSCode</PropertyName>
+                                                            <_dataType>Value</_dataType>
+                                                            <_expression i:nil="true" />
+                                                            <_value xmlns:d31p1="http://www.w3.org/2001/XMLSchema" i:type="d31p1:string">set_currentDocument.Add(str_document);</_value>
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                          <PropertyValue z:Id="i86">
+                                                            <PropertyName>Timeout</PropertyName>
+                                                            <_dataType>Value</_dataType>
+                                                            <_expression i:nil="true" />
+                                                            <_value xmlns:d31p1="http://www.w3.org/2001/XMLSchema" i:type="d31p1:int">0</_value>
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                        </PropertyValues>
+                                                        <SelectedOptionId i:nil="true" />
+                                                        <EnableStatus>true</EnableStatus>
+                                                        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                        <RetryCount>-1</RetryCount>
+                                                        <Text>Поместить страницу в set_currentDocument</Text>
+                                                        <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
+                                                      </AbstractStep>
+                                                    </Childs>
+                                                    <Id>bc97960f-3faa-419d-b9de-6425494e3996</Id>
+                                                    <Parent z:Ref="i76" />
+                                                    <PropertyValues />
+                                                    <SelectedOptionId i:nil="true" />
+                                                    <EnableStatus>true</EnableStatus>
+                                                    <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                    <RetryCount>-1</RetryCount>
+                                                    <Text>Существует страница с приложением</Text>
+                                                    <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
+                                                  </AbstractStep>
+                                                  <AbstractStep z:Id="i87" i:type="ExecutedStep">
+                                                    <Childs />
+                                                    <Id>33246d36-182d-4488-94a9-d177bab09872</Id>
+                                                    <Parent z:Ref="i76" />
+                                                    <PropertyValues />
+                                                    <SelectedOptionId i:nil="true" />
+                                                    <EnableStatus>true</EnableStatus>
+                                                    <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                    <RetryCount>-1</RetryCount>
+                                                    <Text></Text>
+                                                    <_activityFullName>BR.Core.Base.IfFalse</_activityFullName>
+                                                  </AbstractStep>
+                                                </Childs>
+                                                <Id>0e5e4771-7928-4076-94f5-32257daa961e</Id>
                                                 <Parent z:Ref="i75" />
                                                 <PropertyValues>
-                                                  <PropertyValue z:Id="i77">
-                                                    <PropertyName>Value</PropertyName>
+                                                  <PropertyValue z:Id="i88">
+                                                    <PropertyName>Condition</PropertyName>
                                                     <_dataType>Expression</_dataType>
-                                                    <_expression>int_lastdocNumber + 1</_expression>
-                                                    <_value i:nil="true" />
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                  <PropertyValue z:Id="i78">
-                                                    <PropertyName>To</PropertyName>
-                                                    <_dataType>Expression</_dataType>
-                                                    <_expression>int_lastdocNumber</_expression>
+                                                    <_expression>Regex.IsMatch(list_documents[int_lastdocNumber], @"подписан[\s\S]*передан[\s\S]*оператора")</_expression>
                                                     <_value i:nil="true" />
                                                     <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                                   </PropertyValue>
@@ -653,77 +753,23 @@ Regex.IsMatch(str_fileText, @"груз.*принял", RegexOptions.IgnoreCase |
                                                 <EnableStatus>true</EnableStatus>
                                                 <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                                                 <RetryCount>-1</RetryCount>
-                                                <Text>Увеличение счетчика в цикле</Text>
-                                                <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-                                              </AbstractStep>
-                                              <AbstractStep z:Id="i79" i:type="ExecutedStep">
-                                                <Childs />
-                                                <Id>70cbb6ba-9861-4835-8944-2ebef1034f7d</Id>
-                                                <Parent z:Ref="i75" />
-                                                <PropertyValues>
-                                                  <PropertyValue z:Id="i80">
-                                                    <PropertyName>Value</PropertyName>
-                                                    <_dataType>Expression</_dataType>
-                                                    <_expression>list_documents[int_lastdocNumber - 1]</_expression>
-                                                    <_value i:nil="true" />
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                  <PropertyValue z:Id="i81">
-                                                    <PropertyName>To</PropertyName>
-                                                    <_dataType>Expression</_dataType>
-                                                    <_expression>str_document</_expression>
-                                                    <_value i:nil="true" />
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                </PropertyValues>
-                                                <SelectedOptionId i:nil="true" />
-                                                <EnableStatus>true</EnableStatus>
-                                                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                                                <RetryCount>-1</RetryCount>
-                                                <Text>Получение str_document</Text>
-                                                <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-                                              </AbstractStep>
-                                              <AbstractStep z:Id="i82" i:type="ExecutedStep">
-                                                <Childs />
-                                                <Id>3d4afb61-3c64-4f5e-b30b-47e49fd283cc</Id>
-                                                <Parent z:Ref="i75" />
-                                                <PropertyValues>
-                                                  <PropertyValue z:Id="i83">
-                                                    <PropertyName>CSCode</PropertyName>
-                                                    <_dataType>Value</_dataType>
-                                                    <_expression i:nil="true" />
-                                                    <_value xmlns:d27p1="http://www.w3.org/2001/XMLSchema" i:type="d27p1:string">set_currentDocument.Add(str_document);</_value>
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                  <PropertyValue z:Id="i84">
-                                                    <PropertyName>Timeout</PropertyName>
-                                                    <_dataType>Value</_dataType>
-                                                    <_expression i:nil="true" />
-                                                    <_value xmlns:d27p1="http://www.w3.org/2001/XMLSchema" i:type="d27p1:int">0</_value>
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                </PropertyValues>
-                                                <SelectedOptionId i:nil="true" />
-                                                <EnableStatus>true</EnableStatus>
-                                                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                                                <RetryCount>-1</RetryCount>
-                                                <Text>Поместить страницу в set_currentDocument</Text>
-                                                <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
+                                                <Text>Страница с приложением?</Text>
+                                                <_activityFullName>BR.Core.Base.If</_activityFullName>
                                               </AbstractStep>
                                             </Childs>
-                                            <Id>216639e4-188a-4351-bfe3-a5da41536659</Id>
+                                            <Id>701b7b23-6398-4163-abb3-06f4dd3505e5</Id>
                                             <Parent z:Ref="i74" />
                                             <PropertyValues />
                                             <SelectedOptionId i:nil="true" />
                                             <EnableStatus>true</EnableStatus>
                                             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                                             <RetryCount>-1</RetryCount>
-                                            <Text>Существует страница с приложением</Text>
+                                            <Text>Не последний документ</Text>
                                             <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                                           </AbstractStep>
-                                          <AbstractStep z:Id="i85" i:type="ExecutedStep">
+                                          <AbstractStep z:Id="i89" i:type="ExecutedStep">
                                             <Childs />
-                                            <Id>0f839fb0-063d-4d18-8e46-82c6ad7c3233</Id>
+                                            <Id>7fe1f3c0-ef6b-4144-98df-c755e147c23b</Id>
                                             <Parent z:Ref="i74" />
                                             <PropertyValues />
                                             <SelectedOptionId i:nil="true" />
@@ -734,14 +780,13 @@ Regex.IsMatch(str_fileText, @"груз.*принял", RegexOptions.IgnoreCase |
                                             <_activityFullName>BR.Core.Base.IfFalse</_activityFullName>
                                           </AbstractStep>
                                         </Childs>
-                                        <Id>5de9f215-2c48-4382-bbf4-629f6d35b50f</Id>
+                                        <Id>e0eae500-308d-40a6-8bea-320d1ed00763</Id>
                                         <Parent z:Ref="i73" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i86">
+                                          <PropertyValue z:Id="i90">
                                             <PropertyName>Condition</PropertyName>
                                             <_dataType>Expression</_dataType>
-                                            <_expression>int_lastdocNumber != list_documents.Count &amp;&amp; 
-Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*передан[\s\S]*оператора")</_expression>
+                                            <_expression>int_lastdocNumber != list_documents.Count</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
@@ -753,49 +798,49 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text>Проверка страницы с приложением</Text>
                                         <_activityFullName>BR.Core.Base.If</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i87" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i91" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>9ce7cb5b-0bac-467a-be3b-ea034a27962d</Id>
                                         <Parent z:Ref="i73" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i88">
+                                          <PropertyValue z:Id="i92">
                                             <PropertyName>FilePath</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>@"RegexScripts\ProcessTypeTn.pix"</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i89">
+                                          <PropertyValue z:Id="i93">
                                             <PropertyName>Parameters</PropertyName>
                                             <_dataType>Value</_dataType>
                                             <_expression i:nil="true" />
                                             <_value xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d23p1:ArrayOfArgumentItem">
-                                              <d23p1:ArgumentItem z:Id="i90">
+                                              <d23p1:ArgumentItem z:Id="i94">
                                                 <d23p1:ArgumentName>str_type</d23p1:ArgumentName>
                                                 <d23p1:Expression>"ТН"</d23p1:Expression>
                                                 <d23p1:Type>System.String</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i91">
+                                              <d23p1:ArgumentItem z:Id="i95">
                                                 <d23p1:ArgumentName>dt_results</d23p1:ArgumentName>
                                                 <d23p1:Expression>dt_output</d23p1:Expression>
                                                 <d23p1:Type>System.Data.DataTable</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i92">
+                                              <d23p1:ArgumentItem z:Id="i96">
                                                 <d23p1:ArgumentName>int_lastDocNumber</d23p1:ArgumentName>
                                                 <d23p1:Expression>int_lastdocNumber</d23p1:Expression>
                                                 <d23p1:Type>System.Int32</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i93">
+                                              <d23p1:ArgumentItem z:Id="i97">
                                                 <d23p1:ArgumentName>dict_config</d23p1:ArgumentName>
                                                 <d23p1:Expression>dict_config</d23p1:Expression>
                                                 <d23p1:Type>Dictionary&lt;System.String, System.Object&gt;</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i94">
+                                              <d23p1:ArgumentItem z:Id="i98">
                                                 <d23p1:ArgumentName>dict_parameters</d23p1:ArgumentName>
                                                 <d23p1:Expression>dict_parameters</d23p1:Expression>
                                                 <d23p1:Type>Dictionary&lt;System.String, System.String&gt;</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i95">
+                                              <d23p1:ArgumentItem z:Id="i99">
                                                 <d23p1:ArgumentName>set_currentDocument</d23p1:ArgumentName>
                                                 <d23p1:Expression>set_currentDocument</d23p1:Expression>
                                                 <d23p1:Type>HashSet&lt;System.String&gt;</d23p1:Type>
@@ -803,7 +848,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                             </_value>
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i96">
+                                          <PropertyValue z:Id="i100">
                                             <PropertyName>Timeout</PropertyName>
                                             <_dataType>Value</_dataType>
                                             <_expression i:nil="true" />
@@ -818,19 +863,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text></Text>
                                         <_activityFullName>BR.Core.Base.ExecuteScript</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i97" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i101" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>cdc4b33e-a5d0-4309-b83d-02e5b1839945</Id>
                                         <Parent z:Ref="i73" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i98">
+                                          <PropertyValue z:Id="i102">
                                             <PropertyName>Value</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>false</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i99">
+                                          <PropertyValue z:Id="i103">
                                             <PropertyName>To</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>bool_documentTn</_expression>
@@ -845,19 +890,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text>Очистка bool_documentTn</Text>
                                         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i100" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i104" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>c8903d33-a5e3-44f6-96e9-b78925fabb8d</Id>
                                         <Parent z:Ref="i73" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i101">
+                                          <PropertyValue z:Id="i105">
                                             <PropertyName>Value</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>new HashSet&lt;String&gt;()</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i102">
+                                          <PropertyValue z:Id="i106">
                                             <PropertyName>To</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>set_currentDocument</_expression>
@@ -883,7 +928,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                     <Text></Text>
                                     <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                                   </AbstractStep>
-                                  <AbstractStep z:Id="i103" i:type="ExecutedStep">
+                                  <AbstractStep z:Id="i107" i:type="ExecutedStep">
                                     <Childs />
                                     <Id>49734638-3de9-4885-aa86-db2a80ea8136</Id>
                                     <Parent z:Ref="i72" />
@@ -899,7 +944,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                 <Id>c118b919-6761-4814-a337-d5acbc6d2307</Id>
                                 <Parent z:Ref="i68" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i104">
+                                  <PropertyValue z:Id="i108">
                                     <PropertyName>Condition</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>bool_endOfDocumentTn</_expression>
@@ -925,21 +970,21 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                             <Text>Тип документа ТН</Text>
                             <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                           </AbstractStep>
-                          <AbstractStep z:Id="i105" i:type="ExecutedStep">
+                          <AbstractStep z:Id="i109" i:type="ExecutedStep">
                             <Childs>
-                              <AbstractStep z:Id="i106" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i110" i:type="ExecutedStep">
                                 <Childs />
                                 <Id>48d69957-d155-4fed-8335-99dca7c82c57</Id>
-                                <Parent z:Ref="i105" />
+                                <Parent z:Ref="i109" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i107">
+                                  <PropertyValue z:Id="i111">
                                     <PropertyName>Value</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>Regex.IsMatch(str_document, @"всего.*оплате", RegexOptions.IgnoreCase | RegexOptions.Multiline)</_expression>
                                     <_value i:nil="true" />
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i108">
+                                  <PropertyValue z:Id="i112">
                                     <PropertyName>To</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>bool_endOfDocumentSf</_expression>
@@ -954,30 +999,130 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                 <Text>Проверка на конец документа СФ</Text>
                                 <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                               </AbstractStep>
-                              <AbstractStep z:Id="i109" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i113" i:type="ExecutedStep">
                                 <Childs>
-                                  <AbstractStep z:Id="i110" i:type="ExecutedStep">
+                                  <AbstractStep z:Id="i114" i:type="ExecutedStep">
                                     <Childs>
-                                      <AbstractStep z:Id="i111" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i115" i:type="ExecutedStep">
                                         <Childs>
-                                          <AbstractStep z:Id="i112" i:type="ExecutedStep">
+                                          <AbstractStep z:Id="i116" i:type="ExecutedStep">
                                             <Childs>
-                                              <AbstractStep z:Id="i113" i:type="ExecutedStep">
-                                                <Childs />
-                                                <Id>3e6bb1cc-98e2-411d-98dd-66f203156f21</Id>
-                                                <Parent z:Ref="i112" />
+                                              <AbstractStep z:Id="i117" i:type="ExecutedStep">
+                                                <Childs>
+                                                  <AbstractStep z:Id="i118" i:type="ExecutedStep">
+                                                    <Childs>
+                                                      <AbstractStep z:Id="i119" i:type="ExecutedStep">
+                                                        <Childs />
+                                                        <Id>e651b20a-3897-45bb-ba00-3d22a8ffc352</Id>
+                                                        <Parent z:Ref="i118" />
+                                                        <PropertyValues>
+                                                          <PropertyValue z:Id="i120">
+                                                            <PropertyName>Value</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>int_lastdocNumber + 1</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                          <PropertyValue z:Id="i121">
+                                                            <PropertyName>To</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>int_lastdocNumber</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                        </PropertyValues>
+                                                        <SelectedOptionId i:nil="true" />
+                                                        <EnableStatus>true</EnableStatus>
+                                                        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                        <RetryCount>-1</RetryCount>
+                                                        <Text>Увеличение счетчика в цикле</Text>
+                                                        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+                                                      </AbstractStep>
+                                                      <AbstractStep z:Id="i122" i:type="ExecutedStep">
+                                                        <Childs />
+                                                        <Id>6ca5ff8b-3c0e-412b-8c14-364748d9e28a</Id>
+                                                        <Parent z:Ref="i118" />
+                                                        <PropertyValues>
+                                                          <PropertyValue z:Id="i123">
+                                                            <PropertyName>Value</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>list_documents[int_lastdocNumber - 1]</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                          <PropertyValue z:Id="i124">
+                                                            <PropertyName>To</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>str_document</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                        </PropertyValues>
+                                                        <SelectedOptionId i:nil="true" />
+                                                        <EnableStatus>true</EnableStatus>
+                                                        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                        <RetryCount>-1</RetryCount>
+                                                        <Text>Получение str_document</Text>
+                                                        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+                                                      </AbstractStep>
+                                                      <AbstractStep z:Id="i125" i:type="ExecutedStep">
+                                                        <Childs />
+                                                        <Id>cdff2ba5-402d-4208-844a-684c6507bab6</Id>
+                                                        <Parent z:Ref="i118" />
+                                                        <PropertyValues>
+                                                          <PropertyValue z:Id="i126">
+                                                            <PropertyName>CSCode</PropertyName>
+                                                            <_dataType>Value</_dataType>
+                                                            <_expression i:nil="true" />
+                                                            <_value xmlns:d31p1="http://www.w3.org/2001/XMLSchema" i:type="d31p1:string">set_currentDocument.Add(str_document);</_value>
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                          <PropertyValue z:Id="i127">
+                                                            <PropertyName>Timeout</PropertyName>
+                                                            <_dataType>Value</_dataType>
+                                                            <_expression i:nil="true" />
+                                                            <_value xmlns:d31p1="http://www.w3.org/2001/XMLSchema" i:type="d31p1:int">0</_value>
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                        </PropertyValues>
+                                                        <SelectedOptionId i:nil="true" />
+                                                        <EnableStatus>true</EnableStatus>
+                                                        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                        <RetryCount>-1</RetryCount>
+                                                        <Text>Поместить страницу в set_currentDocument</Text>
+                                                        <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
+                                                      </AbstractStep>
+                                                    </Childs>
+                                                    <Id>fe7cbdc2-2a0c-4786-9f85-6208b1c29266</Id>
+                                                    <Parent z:Ref="i117" />
+                                                    <PropertyValues />
+                                                    <SelectedOptionId i:nil="true" />
+                                                    <EnableStatus>true</EnableStatus>
+                                                    <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                    <RetryCount>-1</RetryCount>
+                                                    <Text>Существует страница с приложением</Text>
+                                                    <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
+                                                  </AbstractStep>
+                                                  <AbstractStep z:Id="i128" i:type="ExecutedStep">
+                                                    <Childs />
+                                                    <Id>373b2e56-b272-405e-b372-19900de81393</Id>
+                                                    <Parent z:Ref="i117" />
+                                                    <PropertyValues />
+                                                    <SelectedOptionId i:nil="true" />
+                                                    <EnableStatus>true</EnableStatus>
+                                                    <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                    <RetryCount>-1</RetryCount>
+                                                    <Text></Text>
+                                                    <_activityFullName>BR.Core.Base.IfFalse</_activityFullName>
+                                                  </AbstractStep>
+                                                </Childs>
+                                                <Id>d408ec91-0ee4-4203-a4a6-9b0e1f7a7868</Id>
+                                                <Parent z:Ref="i116" />
                                                 <PropertyValues>
-                                                  <PropertyValue z:Id="i114">
-                                                    <PropertyName>Value</PropertyName>
+                                                  <PropertyValue z:Id="i129">
+                                                    <PropertyName>Condition</PropertyName>
                                                     <_dataType>Expression</_dataType>
-                                                    <_expression>int_lastdocNumber + 1</_expression>
-                                                    <_value i:nil="true" />
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                  <PropertyValue z:Id="i115">
-                                                    <PropertyName>To</PropertyName>
-                                                    <_dataType>Expression</_dataType>
-                                                    <_expression>int_lastdocNumber</_expression>
+                                                    <_expression>Regex.IsMatch(list_documents[int_lastdocNumber], @"подписан[\s\S]*передан[\s\S]*оператора")</_expression>
                                                     <_value i:nil="true" />
                                                     <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                                   </PropertyValue>
@@ -986,78 +1131,24 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                                 <EnableStatus>true</EnableStatus>
                                                 <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                                                 <RetryCount>-1</RetryCount>
-                                                <Text>Увеличение счетчика в цикле</Text>
-                                                <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-                                              </AbstractStep>
-                                              <AbstractStep z:Id="i116" i:type="ExecutedStep">
-                                                <Childs />
-                                                <Id>c22c862e-efac-4cdb-8da5-67ee85fbfb4a</Id>
-                                                <Parent z:Ref="i112" />
-                                                <PropertyValues>
-                                                  <PropertyValue z:Id="i117">
-                                                    <PropertyName>Value</PropertyName>
-                                                    <_dataType>Expression</_dataType>
-                                                    <_expression>list_documents[int_lastdocNumber - 1]</_expression>
-                                                    <_value i:nil="true" />
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                  <PropertyValue z:Id="i118">
-                                                    <PropertyName>To</PropertyName>
-                                                    <_dataType>Expression</_dataType>
-                                                    <_expression>str_document</_expression>
-                                                    <_value i:nil="true" />
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                </PropertyValues>
-                                                <SelectedOptionId i:nil="true" />
-                                                <EnableStatus>true</EnableStatus>
-                                                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                                                <RetryCount>-1</RetryCount>
-                                                <Text>Получение str_document</Text>
-                                                <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-                                              </AbstractStep>
-                                              <AbstractStep z:Id="i119" i:type="ExecutedStep">
-                                                <Childs />
-                                                <Id>5e57d2c3-969a-4df6-b9c0-60be03ebe41a</Id>
-                                                <Parent z:Ref="i112" />
-                                                <PropertyValues>
-                                                  <PropertyValue z:Id="i120">
-                                                    <PropertyName>CSCode</PropertyName>
-                                                    <_dataType>Value</_dataType>
-                                                    <_expression i:nil="true" />
-                                                    <_value xmlns:d27p1="http://www.w3.org/2001/XMLSchema" i:type="d27p1:string">set_currentDocument.Add(str_document);</_value>
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                  <PropertyValue z:Id="i121">
-                                                    <PropertyName>Timeout</PropertyName>
-                                                    <_dataType>Value</_dataType>
-                                                    <_expression i:nil="true" />
-                                                    <_value xmlns:d27p1="http://www.w3.org/2001/XMLSchema" i:type="d27p1:int">0</_value>
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                </PropertyValues>
-                                                <SelectedOptionId i:nil="true" />
-                                                <EnableStatus>true</EnableStatus>
-                                                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                                                <RetryCount>-1</RetryCount>
-                                                <Text>Поместить страницу в set_currentDocument</Text>
-                                                <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
+                                                <Text>Страница с приложением?</Text>
+                                                <_activityFullName>BR.Core.Base.If</_activityFullName>
                                               </AbstractStep>
                                             </Childs>
-                                            <Id>89dcfcf9-b74a-471e-a59a-4c6ad4797aae</Id>
-                                            <Parent z:Ref="i111" />
+                                            <Id>fd12617f-92d9-439f-b942-e4c52fb3e60d</Id>
+                                            <Parent z:Ref="i115" />
                                             <PropertyValues />
                                             <SelectedOptionId i:nil="true" />
                                             <EnableStatus>true</EnableStatus>
                                             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                                             <RetryCount>-1</RetryCount>
-                                            <Text>Существует страница с приложением</Text>
+                                            <Text>Не последний документ</Text>
                                             <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                                           </AbstractStep>
-                                          <AbstractStep z:Id="i122" i:type="ExecutedStep">
+                                          <AbstractStep z:Id="i130" i:type="ExecutedStep">
                                             <Childs />
-                                            <Id>bc2e08ad-1b86-4ff1-a353-f27526c283f3</Id>
-                                            <Parent z:Ref="i111" />
+                                            <Id>7b3be12a-8c18-48fe-a366-390ba4020e32</Id>
+                                            <Parent z:Ref="i115" />
                                             <PropertyValues />
                                             <SelectedOptionId i:nil="true" />
                                             <EnableStatus>true</EnableStatus>
@@ -1067,14 +1158,13 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                             <_activityFullName>BR.Core.Base.IfFalse</_activityFullName>
                                           </AbstractStep>
                                         </Childs>
-                                        <Id>956df02f-f047-4723-b52c-791698b68622</Id>
-                                        <Parent z:Ref="i110" />
+                                        <Id>b866d10f-64e6-460d-bf22-e6533069ab6a</Id>
+                                        <Parent z:Ref="i114" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i123">
+                                          <PropertyValue z:Id="i131">
                                             <PropertyName>Condition</PropertyName>
                                             <_dataType>Expression</_dataType>
-                                            <_expression>int_lastdocNumber != list_documents.Count &amp;&amp; 
-Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*передан[\s\S]*оператора")</_expression>
+                                            <_expression>int_lastdocNumber != list_documents.Count</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
@@ -1086,49 +1176,49 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text>Проверка страницы с приложением</Text>
                                         <_activityFullName>BR.Core.Base.If</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i124" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i132" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>48b043ef-279c-4203-a453-b3f4ba3890ca</Id>
-                                        <Parent z:Ref="i110" />
+                                        <Parent z:Ref="i114" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i125">
+                                          <PropertyValue z:Id="i133">
                                             <PropertyName>FilePath</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>@"RegexScripts\ProcessTypeSf.pix"</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i126">
+                                          <PropertyValue z:Id="i134">
                                             <PropertyName>Parameters</PropertyName>
                                             <_dataType>Value</_dataType>
                                             <_expression i:nil="true" />
                                             <_value xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d23p1:ArrayOfArgumentItem">
-                                              <d23p1:ArgumentItem z:Id="i127">
+                                              <d23p1:ArgumentItem z:Id="i135">
                                                 <d23p1:ArgumentName>str_type</d23p1:ArgumentName>
                                                 <d23p1:Expression>"СФ"</d23p1:Expression>
                                                 <d23p1:Type>System.String</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i128">
+                                              <d23p1:ArgumentItem z:Id="i136">
                                                 <d23p1:ArgumentName>dt_results</d23p1:ArgumentName>
                                                 <d23p1:Expression>dt_output</d23p1:Expression>
                                                 <d23p1:Type>System.Data.DataTable</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i129">
+                                              <d23p1:ArgumentItem z:Id="i137">
                                                 <d23p1:ArgumentName>int_lastDocNumber</d23p1:ArgumentName>
                                                 <d23p1:Expression>int_lastdocNumber</d23p1:Expression>
                                                 <d23p1:Type>System.Int32</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i130">
+                                              <d23p1:ArgumentItem z:Id="i138">
                                                 <d23p1:ArgumentName>dict_config</d23p1:ArgumentName>
                                                 <d23p1:Expression>dict_config</d23p1:Expression>
                                                 <d23p1:Type>Dictionary&lt;System.String, System.Object&gt;</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i131">
+                                              <d23p1:ArgumentItem z:Id="i139">
                                                 <d23p1:ArgumentName>dict_parameters</d23p1:ArgumentName>
                                                 <d23p1:Expression>dict_parameters</d23p1:Expression>
                                                 <d23p1:Type>Dictionary&lt;System.String, System.String&gt;</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i132">
+                                              <d23p1:ArgumentItem z:Id="i140">
                                                 <d23p1:ArgumentName>set_currentDocument</d23p1:ArgumentName>
                                                 <d23p1:Expression>set_currentDocument</d23p1:Expression>
                                                 <d23p1:Type>HashSet&lt;System.String&gt;</d23p1:Type>
@@ -1136,7 +1226,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                             </_value>
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i133">
+                                          <PropertyValue z:Id="i141">
                                             <PropertyName>Timeout</PropertyName>
                                             <_dataType>Value</_dataType>
                                             <_expression i:nil="true" />
@@ -1151,19 +1241,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text></Text>
                                         <_activityFullName>BR.Core.Base.ExecuteScript</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i134" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i142" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>f6680bb1-ffc2-47da-9abe-2dbf362cc94a</Id>
-                                        <Parent z:Ref="i110" />
+                                        <Parent z:Ref="i114" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i135">
+                                          <PropertyValue z:Id="i143">
                                             <PropertyName>Value</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>false</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i136">
+                                          <PropertyValue z:Id="i144">
                                             <PropertyName>To</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>bool_documentSf</_expression>
@@ -1178,19 +1268,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text>Очистка bool_documentSf</Text>
                                         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i137" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i145" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>63e0b99b-20cd-4d10-a7ca-b06ac513e50a</Id>
-                                        <Parent z:Ref="i110" />
+                                        <Parent z:Ref="i114" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i138">
+                                          <PropertyValue z:Id="i146">
                                             <PropertyName>Value</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>new HashSet&lt;String&gt;()</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i139">
+                                          <PropertyValue z:Id="i147">
                                             <PropertyName>To</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>set_currentDocument</_expression>
@@ -1207,7 +1297,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                       </AbstractStep>
                                     </Childs>
                                     <Id>5d6dd42a-51f2-41c7-81cf-ea577190abf1</Id>
-                                    <Parent z:Ref="i109" />
+                                    <Parent z:Ref="i113" />
                                     <PropertyValues />
                                     <SelectedOptionId i:nil="true" />
                                     <EnableStatus>true</EnableStatus>
@@ -1216,10 +1306,10 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                     <Text></Text>
                                     <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                                   </AbstractStep>
-                                  <AbstractStep z:Id="i140" i:type="ExecutedStep">
+                                  <AbstractStep z:Id="i148" i:type="ExecutedStep">
                                     <Childs />
                                     <Id>4804e449-fb43-4bdf-8a52-f5a516656cc4</Id>
-                                    <Parent z:Ref="i109" />
+                                    <Parent z:Ref="i113" />
                                     <PropertyValues />
                                     <SelectedOptionId i:nil="true" />
                                     <EnableStatus>true</EnableStatus>
@@ -1230,9 +1320,9 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                   </AbstractStep>
                                 </Childs>
                                 <Id>951bae20-472a-4897-9669-0701c40b863e</Id>
-                                <Parent z:Ref="i105" />
+                                <Parent z:Ref="i109" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i141">
+                                  <PropertyValue z:Id="i149">
                                     <PropertyName>Condition</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>bool_endOfDocumentSf</_expression>
@@ -1251,7 +1341,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                             <Id>3a340db4-0105-484e-bf6d-87f3aff17992</Id>
                             <Parent z:Ref="i67" />
                             <PropertyValues>
-                              <PropertyValue z:Id="i142">
+                              <PropertyValue z:Id="i150">
                                 <PropertyName>Condition</PropertyName>
                                 <_dataType>Expression</_dataType>
                                 <_expression>bool_documentSf</_expression>
@@ -1266,21 +1356,21 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                             <Text>Тип документа СФ</Text>
                             <_activityFullName>BR.Core.Base.ElseIf</_activityFullName>
                           </AbstractStep>
-                          <AbstractStep z:Id="i143" i:type="ExecutedStep">
+                          <AbstractStep z:Id="i151" i:type="ExecutedStep">
                             <Childs>
-                              <AbstractStep z:Id="i144" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i152" i:type="ExecutedStep">
                                 <Childs />
                                 <Id>9c72324a-4872-4b3f-a88b-647870f143d7</Id>
-                                <Parent z:Ref="i143" />
+                                <Parent z:Ref="i151" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i145">
+                                  <PropertyValue z:Id="i153">
                                     <PropertyName>Value</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>Regex.IsMatch(str_document, @"итого:", RegexOptions.IgnoreCase | RegexOptions.Multiline)</_expression>
                                     <_value i:nil="true" />
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i146">
+                                  <PropertyValue z:Id="i154">
                                     <PropertyName>To</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>bool_endOfDocumentSo</_expression>
@@ -1295,30 +1385,130 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                 <Text>Проверка на конец документа СО</Text>
                                 <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                               </AbstractStep>
-                              <AbstractStep z:Id="i147" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i155" i:type="ExecutedStep">
                                 <Childs>
-                                  <AbstractStep z:Id="i148" i:type="ExecutedStep">
+                                  <AbstractStep z:Id="i156" i:type="ExecutedStep">
                                     <Childs>
-                                      <AbstractStep z:Id="i149" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i157" i:type="ExecutedStep">
                                         <Childs>
-                                          <AbstractStep z:Id="i150" i:type="ExecutedStep">
+                                          <AbstractStep z:Id="i158" i:type="ExecutedStep">
                                             <Childs>
-                                              <AbstractStep z:Id="i151" i:type="ExecutedStep">
-                                                <Childs />
-                                                <Id>30cdd98f-c77f-40c7-b61f-798a61be6500</Id>
-                                                <Parent z:Ref="i150" />
+                                              <AbstractStep z:Id="i159" i:type="ExecutedStep">
+                                                <Childs>
+                                                  <AbstractStep z:Id="i160" i:type="ExecutedStep">
+                                                    <Childs>
+                                                      <AbstractStep z:Id="i161" i:type="ExecutedStep">
+                                                        <Childs />
+                                                        <Id>30cdd98f-c77f-40c7-b61f-798a61be6500</Id>
+                                                        <Parent z:Ref="i160" />
+                                                        <PropertyValues>
+                                                          <PropertyValue z:Id="i162">
+                                                            <PropertyName>Value</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>int_lastdocNumber + 1</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                          <PropertyValue z:Id="i163">
+                                                            <PropertyName>To</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>int_lastdocNumber</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                        </PropertyValues>
+                                                        <SelectedOptionId i:nil="true" />
+                                                        <EnableStatus>true</EnableStatus>
+                                                        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                        <RetryCount>-1</RetryCount>
+                                                        <Text>Увеличение счетчика в цикле</Text>
+                                                        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+                                                      </AbstractStep>
+                                                      <AbstractStep z:Id="i164" i:type="ExecutedStep">
+                                                        <Childs />
+                                                        <Id>ad929c3b-3d00-4f86-9825-d0b61c1aa723</Id>
+                                                        <Parent z:Ref="i160" />
+                                                        <PropertyValues>
+                                                          <PropertyValue z:Id="i165">
+                                                            <PropertyName>Value</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>list_documents[int_lastdocNumber - 1]</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                          <PropertyValue z:Id="i166">
+                                                            <PropertyName>To</PropertyName>
+                                                            <_dataType>Expression</_dataType>
+                                                            <_expression>str_document</_expression>
+                                                            <_value i:nil="true" />
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                        </PropertyValues>
+                                                        <SelectedOptionId i:nil="true" />
+                                                        <EnableStatus>true</EnableStatus>
+                                                        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                        <RetryCount>-1</RetryCount>
+                                                        <Text>Получение str_document</Text>
+                                                        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+                                                      </AbstractStep>
+                                                      <AbstractStep z:Id="i167" i:type="ExecutedStep">
+                                                        <Childs />
+                                                        <Id>cc4019bb-edb1-42d1-9ad5-6bad84d8ef1e</Id>
+                                                        <Parent z:Ref="i160" />
+                                                        <PropertyValues>
+                                                          <PropertyValue z:Id="i168">
+                                                            <PropertyName>CSCode</PropertyName>
+                                                            <_dataType>Value</_dataType>
+                                                            <_expression i:nil="true" />
+                                                            <_value xmlns:d31p1="http://www.w3.org/2001/XMLSchema" i:type="d31p1:string">set_currentDocument.Add(str_document);</_value>
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                          <PropertyValue z:Id="i169">
+                                                            <PropertyName>Timeout</PropertyName>
+                                                            <_dataType>Value</_dataType>
+                                                            <_expression i:nil="true" />
+                                                            <_value xmlns:d31p1="http://www.w3.org/2001/XMLSchema" i:type="d31p1:int">0</_value>
+                                                            <_xpathSettings xmlns:d31p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+                                                          </PropertyValue>
+                                                        </PropertyValues>
+                                                        <SelectedOptionId i:nil="true" />
+                                                        <EnableStatus>true</EnableStatus>
+                                                        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                        <RetryCount>-1</RetryCount>
+                                                        <Text>Поместить страницу в set_currentDocument</Text>
+                                                        <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
+                                                      </AbstractStep>
+                                                    </Childs>
+                                                    <Id>de2638a9-1887-41a2-8c94-4b2ddafbe66f</Id>
+                                                    <Parent z:Ref="i159" />
+                                                    <PropertyValues />
+                                                    <SelectedOptionId i:nil="true" />
+                                                    <EnableStatus>true</EnableStatus>
+                                                    <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                    <RetryCount>-1</RetryCount>
+                                                    <Text>Существует страница с приложением</Text>
+                                                    <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
+                                                  </AbstractStep>
+                                                  <AbstractStep z:Id="i170" i:type="ExecutedStep">
+                                                    <Childs />
+                                                    <Id>0c1c105d-3afe-48a5-b3bc-ae32decfa2e5</Id>
+                                                    <Parent z:Ref="i159" />
+                                                    <PropertyValues />
+                                                    <SelectedOptionId i:nil="true" />
+                                                    <EnableStatus>true</EnableStatus>
+                                                    <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+                                                    <RetryCount>-1</RetryCount>
+                                                    <Text></Text>
+                                                    <_activityFullName>BR.Core.Base.IfFalse</_activityFullName>
+                                                  </AbstractStep>
+                                                </Childs>
+                                                <Id>15a64133-bc5c-40c0-b1a6-6fc0e86cbfd2</Id>
+                                                <Parent z:Ref="i158" />
                                                 <PropertyValues>
-                                                  <PropertyValue z:Id="i152">
-                                                    <PropertyName>Value</PropertyName>
+                                                  <PropertyValue z:Id="i171">
+                                                    <PropertyName>Condition</PropertyName>
                                                     <_dataType>Expression</_dataType>
-                                                    <_expression>int_lastdocNumber + 1</_expression>
-                                                    <_value i:nil="true" />
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                  <PropertyValue z:Id="i153">
-                                                    <PropertyName>To</PropertyName>
-                                                    <_dataType>Expression</_dataType>
-                                                    <_expression>int_lastdocNumber</_expression>
+                                                    <_expression>Regex.IsMatch(list_documents[int_lastdocNumber], @"подписан[\s\S]*передан[\s\S]*оператора")</_expression>
                                                     <_value i:nil="true" />
                                                     <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                                   </PropertyValue>
@@ -1327,78 +1517,24 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                                 <EnableStatus>true</EnableStatus>
                                                 <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                                                 <RetryCount>-1</RetryCount>
-                                                <Text>Увеличение счетчика в цикле</Text>
-                                                <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-                                              </AbstractStep>
-                                              <AbstractStep z:Id="i154" i:type="ExecutedStep">
-                                                <Childs />
-                                                <Id>ad929c3b-3d00-4f86-9825-d0b61c1aa723</Id>
-                                                <Parent z:Ref="i150" />
-                                                <PropertyValues>
-                                                  <PropertyValue z:Id="i155">
-                                                    <PropertyName>Value</PropertyName>
-                                                    <_dataType>Expression</_dataType>
-                                                    <_expression>list_documents[int_lastdocNumber - 1]</_expression>
-                                                    <_value i:nil="true" />
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                  <PropertyValue z:Id="i156">
-                                                    <PropertyName>To</PropertyName>
-                                                    <_dataType>Expression</_dataType>
-                                                    <_expression>str_document</_expression>
-                                                    <_value i:nil="true" />
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                </PropertyValues>
-                                                <SelectedOptionId i:nil="true" />
-                                                <EnableStatus>true</EnableStatus>
-                                                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                                                <RetryCount>-1</RetryCount>
-                                                <Text>Получение str_document</Text>
-                                                <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-                                              </AbstractStep>
-                                              <AbstractStep z:Id="i157" i:type="ExecutedStep">
-                                                <Childs />
-                                                <Id>cc4019bb-edb1-42d1-9ad5-6bad84d8ef1e</Id>
-                                                <Parent z:Ref="i150" />
-                                                <PropertyValues>
-                                                  <PropertyValue z:Id="i158">
-                                                    <PropertyName>CSCode</PropertyName>
-                                                    <_dataType>Value</_dataType>
-                                                    <_expression i:nil="true" />
-                                                    <_value xmlns:d27p1="http://www.w3.org/2001/XMLSchema" i:type="d27p1:string">set_currentDocument.Add(str_document);</_value>
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                  <PropertyValue z:Id="i159">
-                                                    <PropertyName>Timeout</PropertyName>
-                                                    <_dataType>Value</_dataType>
-                                                    <_expression i:nil="true" />
-                                                    <_value xmlns:d27p1="http://www.w3.org/2001/XMLSchema" i:type="d27p1:int">0</_value>
-                                                    <_xpathSettings xmlns:d27p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                                                  </PropertyValue>
-                                                </PropertyValues>
-                                                <SelectedOptionId i:nil="true" />
-                                                <EnableStatus>true</EnableStatus>
-                                                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                                                <RetryCount>-1</RetryCount>
-                                                <Text>Поместить страницу в set_currentDocument</Text>
-                                                <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
+                                                <Text>Страница с приложением?</Text>
+                                                <_activityFullName>BR.Core.Base.If</_activityFullName>
                                               </AbstractStep>
                                             </Childs>
-                                            <Id>de2638a9-1887-41a2-8c94-4b2ddafbe66f</Id>
-                                            <Parent z:Ref="i149" />
+                                            <Id>21a3bfcb-7415-4efc-a087-7efcacbd43a5</Id>
+                                            <Parent z:Ref="i157" />
                                             <PropertyValues />
                                             <SelectedOptionId i:nil="true" />
                                             <EnableStatus>true</EnableStatus>
                                             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                                             <RetryCount>-1</RetryCount>
-                                            <Text>Существует страница с приложением</Text>
+                                            <Text>Не последний документ</Text>
                                             <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                                           </AbstractStep>
-                                          <AbstractStep z:Id="i160" i:type="ExecutedStep">
+                                          <AbstractStep z:Id="i172" i:type="ExecutedStep">
                                             <Childs />
-                                            <Id>0c1c105d-3afe-48a5-b3bc-ae32decfa2e5</Id>
-                                            <Parent z:Ref="i149" />
+                                            <Id>1b879ff0-853f-4d82-8955-8113ec77981b</Id>
+                                            <Parent z:Ref="i157" />
                                             <PropertyValues />
                                             <SelectedOptionId i:nil="true" />
                                             <EnableStatus>true</EnableStatus>
@@ -1408,14 +1544,13 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                             <_activityFullName>BR.Core.Base.IfFalse</_activityFullName>
                                           </AbstractStep>
                                         </Childs>
-                                        <Id>15a64133-bc5c-40c0-b1a6-6fc0e86cbfd2</Id>
-                                        <Parent z:Ref="i148" />
+                                        <Id>94b63e2f-7054-4bf5-a5ea-16f78c97a097</Id>
+                                        <Parent z:Ref="i156" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i161">
+                                          <PropertyValue z:Id="i173">
                                             <PropertyName>Condition</PropertyName>
                                             <_dataType>Expression</_dataType>
-                                            <_expression>int_lastdocNumber != list_documents.Count &amp;&amp; 
-Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*передан[\s\S]*оператора")</_expression>
+                                            <_expression>int_lastdocNumber != list_documents.Count</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
@@ -1427,49 +1562,49 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text>Проверка страницы с приложением</Text>
                                         <_activityFullName>BR.Core.Base.If</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i162" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i174" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>ff65140a-3ee1-4b76-93dc-75c31d0764af</Id>
-                                        <Parent z:Ref="i148" />
+                                        <Parent z:Ref="i156" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i163">
+                                          <PropertyValue z:Id="i175">
                                             <PropertyName>FilePath</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>@"RegexScripts\ProcessTypeSo.pix"</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i164">
+                                          <PropertyValue z:Id="i176">
                                             <PropertyName>Parameters</PropertyName>
                                             <_dataType>Value</_dataType>
                                             <_expression i:nil="true" />
                                             <_value xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d23p1:ArrayOfArgumentItem">
-                                              <d23p1:ArgumentItem z:Id="i165">
+                                              <d23p1:ArgumentItem z:Id="i177">
                                                 <d23p1:ArgumentName>str_type</d23p1:ArgumentName>
                                                 <d23p1:Expression>"СО"</d23p1:Expression>
                                                 <d23p1:Type>System.String</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i166">
+                                              <d23p1:ArgumentItem z:Id="i178">
                                                 <d23p1:ArgumentName>dt_results</d23p1:ArgumentName>
                                                 <d23p1:Expression>dt_output</d23p1:Expression>
                                                 <d23p1:Type>System.Data.DataTable</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i167">
+                                              <d23p1:ArgumentItem z:Id="i179">
                                                 <d23p1:ArgumentName>int_lastDocNumber</d23p1:ArgumentName>
                                                 <d23p1:Expression>int_lastdocNumber</d23p1:Expression>
                                                 <d23p1:Type>System.Int32</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i168">
+                                              <d23p1:ArgumentItem z:Id="i180">
                                                 <d23p1:ArgumentName>dict_config</d23p1:ArgumentName>
                                                 <d23p1:Expression>dict_config</d23p1:Expression>
                                                 <d23p1:Type>Dictionary&lt;System.String, System.Object&gt;</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i169">
+                                              <d23p1:ArgumentItem z:Id="i181">
                                                 <d23p1:ArgumentName>dict_parameters</d23p1:ArgumentName>
                                                 <d23p1:Expression>dict_parameters</d23p1:Expression>
                                                 <d23p1:Type>Dictionary&lt;System.String, System.String&gt;</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i170">
+                                              <d23p1:ArgumentItem z:Id="i182">
                                                 <d23p1:ArgumentName>set_currentDocument</d23p1:ArgumentName>
                                                 <d23p1:Expression>set_currentDocument</d23p1:Expression>
                                                 <d23p1:Type>HashSet&lt;System.String&gt;</d23p1:Type>
@@ -1477,7 +1612,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                             </_value>
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i171">
+                                          <PropertyValue z:Id="i183">
                                             <PropertyName>Timeout</PropertyName>
                                             <_dataType>Value</_dataType>
                                             <_expression i:nil="true" />
@@ -1492,19 +1627,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text></Text>
                                         <_activityFullName>BR.Core.Base.ExecuteScript</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i172" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i184" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>71d4bda7-fad0-46dd-8d7c-78fb083fc67f</Id>
-                                        <Parent z:Ref="i148" />
+                                        <Parent z:Ref="i156" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i173">
+                                          <PropertyValue z:Id="i185">
                                             <PropertyName>Value</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>false</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i174">
+                                          <PropertyValue z:Id="i186">
                                             <PropertyName>To</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>bool_documentSo</_expression>
@@ -1519,19 +1654,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text>Очистка bool_documentSo</Text>
                                         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i175" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i187" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>b13d99e7-0998-4c57-afde-4c3dce7d75f6</Id>
-                                        <Parent z:Ref="i148" />
+                                        <Parent z:Ref="i156" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i176">
+                                          <PropertyValue z:Id="i188">
                                             <PropertyName>Value</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>new HashSet&lt;String&gt;()</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i177">
+                                          <PropertyValue z:Id="i189">
                                             <PropertyName>To</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>set_currentDocument</_expression>
@@ -1548,7 +1683,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                       </AbstractStep>
                                     </Childs>
                                     <Id>ae844b67-84a6-427b-a05f-35c5066a2d87</Id>
-                                    <Parent z:Ref="i147" />
+                                    <Parent z:Ref="i155" />
                                     <PropertyValues />
                                     <SelectedOptionId i:nil="true" />
                                     <EnableStatus>true</EnableStatus>
@@ -1557,10 +1692,10 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                     <Text></Text>
                                     <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                                   </AbstractStep>
-                                  <AbstractStep z:Id="i178" i:type="ExecutedStep">
+                                  <AbstractStep z:Id="i190" i:type="ExecutedStep">
                                     <Childs />
                                     <Id>f1890ad0-b490-4b2c-95b5-dfd6feb0dc3f</Id>
-                                    <Parent z:Ref="i147" />
+                                    <Parent z:Ref="i155" />
                                     <PropertyValues />
                                     <SelectedOptionId i:nil="true" />
                                     <EnableStatus>true</EnableStatus>
@@ -1571,9 +1706,9 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                   </AbstractStep>
                                 </Childs>
                                 <Id>54ca77a5-0807-4138-b607-8529f5a8eb73</Id>
-                                <Parent z:Ref="i143" />
+                                <Parent z:Ref="i151" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i179">
+                                  <PropertyValue z:Id="i191">
                                     <PropertyName>Condition</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>bool_endOfDocumentSo</_expression>
@@ -1592,7 +1727,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                             <Id>d866246b-5eab-46de-8e79-0aabda491ff4</Id>
                             <Parent z:Ref="i67" />
                             <PropertyValues>
-                              <PropertyValue z:Id="i180">
+                              <PropertyValue z:Id="i192">
                                 <PropertyName>Condition</PropertyName>
                                 <_dataType>Expression</_dataType>
                                 <_expression>bool_documentSo</_expression>
@@ -1607,21 +1742,21 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                             <Text>Тип документа СО</Text>
                             <_activityFullName>BR.Core.Base.ElseIf</_activityFullName>
                           </AbstractStep>
-                          <AbstractStep z:Id="i181" i:type="ExecutedStep">
+                          <AbstractStep z:Id="i193" i:type="ExecutedStep">
                             <Childs>
-                              <AbstractStep z:Id="i182" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i194" i:type="ExecutedStep">
                                 <Childs />
                                 <Id>e5992b9c-61fa-493c-9555-f9ea654a5036</Id>
-                                <Parent z:Ref="i181" />
+                                <Parent z:Ref="i193" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i183">
+                                  <PropertyValue z:Id="i195">
                                     <PropertyName>Value</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>Regex.IsMatch(str_document, @"сч[её]т-фактура\s*№", RegexOptions.IgnoreCase | RegexOptions.Multiline)</_expression>
                                     <_value i:nil="true" />
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i184">
+                                  <PropertyValue z:Id="i196">
                                     <PropertyName>To</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>bool_documentSf</_expression>
@@ -1636,19 +1771,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                 <Text>Проверка на начало документа СФ</Text>
                                 <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                               </AbstractStep>
-                              <AbstractStep z:Id="i185" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i197" i:type="ExecutedStep">
                                 <Childs />
                                 <Id>9dbd9cd4-085c-4f97-97ef-1ad6cc16d2ff</Id>
-                                <Parent z:Ref="i181" />
+                                <Parent z:Ref="i193" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i186">
+                                  <PropertyValue z:Id="i198">
                                     <PropertyName>Value</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>Regex.IsMatch(str_document, @"(?&lt;=грузополучатель[\s\S]*)товарная.?накладная", RegexOptions.IgnoreCase | RegexOptions.Multiline)</_expression>
                                     <_value i:nil="true" />
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i187">
+                                  <PropertyValue z:Id="i199">
                                     <PropertyName>To</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>bool_documentTn</_expression>
@@ -1663,19 +1798,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                 <Text>Проверка на начало документа ТН</Text>
                                 <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                               </AbstractStep>
-                              <AbstractStep z:Id="i188" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i200" i:type="ExecutedStep">
                                 <Childs />
                                 <Id>8b7d4f8f-a6b8-42df-8ecf-163b94133c86</Id>
-                                <Parent z:Ref="i181" />
+                                <Parent z:Ref="i193" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i189">
+                                  <PropertyValue z:Id="i201">
                                     <PropertyName>Value</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>Regex.IsMatch(str_document, @"счет\s*на\s*оплату\s*№", RegexOptions.IgnoreCase | RegexOptions.Multiline)</_expression>
                                     <_value i:nil="true" />
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i190">
+                                  <PropertyValue z:Id="i202">
                                     <PropertyName>To</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>bool_documentSo</_expression>
@@ -1690,23 +1825,23 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                 <Text>Проверка на начало документа СО</Text>
                                 <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                               </AbstractStep>
-                              <AbstractStep z:Id="i191" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i203" i:type="ExecutedStep">
                                 <Childs>
-                                  <AbstractStep z:Id="i192" i:type="ExecutedStep">
+                                  <AbstractStep z:Id="i204" i:type="ExecutedStep">
                                     <Childs>
-                                      <AbstractStep z:Id="i193" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i205" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>40d03114-660c-4fd4-92c5-ca9fee01eb47</Id>
-                                        <Parent z:Ref="i192" />
+                                        <Parent z:Ref="i204" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i194">
+                                          <PropertyValue z:Id="i206">
                                             <PropertyName>Value</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>int_lastdocNumber - 1</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i195">
+                                          <PropertyValue z:Id="i207">
                                             <PropertyName>To</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>int_lastdocNumber</_expression>
@@ -1723,7 +1858,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                       </AbstractStep>
                                     </Childs>
                                     <Id>e98a5c4a-8806-4b0c-adfb-0b8bfadca071</Id>
-                                    <Parent z:Ref="i191" />
+                                    <Parent z:Ref="i203" />
                                     <PropertyValues />
                                     <SelectedOptionId i:nil="true" />
                                     <EnableStatus>true</EnableStatus>
@@ -1732,51 +1867,51 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                     <Text>Возврат на предыдущий элемент цикла</Text>
                                     <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                                   </AbstractStep>
-                                  <AbstractStep z:Id="i196" i:type="ExecutedStep">
+                                  <AbstractStep z:Id="i208" i:type="ExecutedStep">
                                     <Childs>
-                                      <AbstractStep z:Id="i197" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i209" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>4d99a6d8-ff2f-4106-b0ed-13559b7dcb33</Id>
-                                        <Parent z:Ref="i196" />
+                                        <Parent z:Ref="i208" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i198">
+                                          <PropertyValue z:Id="i210">
                                             <PropertyName>FilePath</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>@"RegexScripts\ProcessTypeErr.pix"</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i199">
+                                          <PropertyValue z:Id="i211">
                                             <PropertyName>Parameters</PropertyName>
                                             <_dataType>Value</_dataType>
                                             <_expression i:nil="true" />
                                             <_value xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d23p1:ArrayOfArgumentItem">
-                                              <d23p1:ArgumentItem z:Id="i200">
+                                              <d23p1:ArgumentItem z:Id="i212">
                                                 <d23p1:ArgumentName>str_type</d23p1:ArgumentName>
                                                 <d23p1:Expression>"Ошибка"</d23p1:Expression>
                                                 <d23p1:Type>System.String</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i201">
+                                              <d23p1:ArgumentItem z:Id="i213">
                                                 <d23p1:ArgumentName>dt_results</d23p1:ArgumentName>
                                                 <d23p1:Expression>dt_output</d23p1:Expression>
                                                 <d23p1:Type>System.Data.DataTable</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i202">
+                                              <d23p1:ArgumentItem z:Id="i214">
                                                 <d23p1:ArgumentName>int_lastDocNumber</d23p1:ArgumentName>
                                                 <d23p1:Expression>int_lastdocNumber</d23p1:Expression>
                                                 <d23p1:Type>System.Int32</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i203">
+                                              <d23p1:ArgumentItem z:Id="i215">
                                                 <d23p1:ArgumentName>dict_config</d23p1:ArgumentName>
                                                 <d23p1:Expression>dict_config</d23p1:Expression>
                                                 <d23p1:Type>Dictionary&lt;System.String, System.Object&gt;</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i204">
+                                              <d23p1:ArgumentItem z:Id="i216">
                                                 <d23p1:ArgumentName>dict_parameters</d23p1:ArgumentName>
                                                 <d23p1:Expression>dict_parameters</d23p1:Expression>
                                                 <d23p1:Type>Dictionary&lt;System.String, System.String&gt;</d23p1:Type>
                                               </d23p1:ArgumentItem>
-                                              <d23p1:ArgumentItem z:Id="i205">
+                                              <d23p1:ArgumentItem z:Id="i217">
                                                 <d23p1:ArgumentName>set_currentDocument</d23p1:ArgumentName>
                                                 <d23p1:Expression>set_currentDocument</d23p1:Expression>
                                                 <d23p1:Type>HashSet&lt;System.String&gt;</d23p1:Type>
@@ -1784,7 +1919,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                             </_value>
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i206">
+                                          <PropertyValue z:Id="i218">
                                             <PropertyName>Timeout</PropertyName>
                                             <_dataType>Value</_dataType>
                                             <_expression i:nil="true" />
@@ -1799,19 +1934,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                         <Text></Text>
                                         <_activityFullName>BR.Core.Base.ExecuteScript</_activityFullName>
                                       </AbstractStep>
-                                      <AbstractStep z:Id="i207" i:type="ExecutedStep">
+                                      <AbstractStep z:Id="i219" i:type="ExecutedStep">
                                         <Childs />
                                         <Id>f5c45ea6-a386-4f38-a6dc-b119f0e7413c</Id>
-                                        <Parent z:Ref="i196" />
+                                        <Parent z:Ref="i208" />
                                         <PropertyValues>
-                                          <PropertyValue z:Id="i208">
+                                          <PropertyValue z:Id="i220">
                                             <PropertyName>Value</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>new HashSet&lt;String&gt;()</_expression>
                                             <_value i:nil="true" />
                                             <_xpathSettings xmlns:d23p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                           </PropertyValue>
-                                          <PropertyValue z:Id="i209">
+                                          <PropertyValue z:Id="i221">
                                             <PropertyName>To</PropertyName>
                                             <_dataType>Expression</_dataType>
                                             <_expression>set_currentDocument</_expression>
@@ -1828,7 +1963,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                       </AbstractStep>
                                     </Childs>
                                     <Id>e050e31d-9594-4761-b907-cdeaff384ec6</Id>
-                                    <Parent z:Ref="i191" />
+                                    <Parent z:Ref="i203" />
                                     <PropertyValues />
                                     <SelectedOptionId i:nil="true" />
                                     <EnableStatus>true</EnableStatus>
@@ -1839,9 +1974,9 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                                   </AbstractStep>
                                 </Childs>
                                 <Id>7231a30c-7ead-4fbe-90be-26690c182af5</Id>
-                                <Parent z:Ref="i181" />
+                                <Parent z:Ref="i193" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i210">
+                                  <PropertyValue z:Id="i222">
                                     <PropertyName>Condition</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>bool_documentSo || bool_documentTn || bool_documentSf</_expression>
@@ -1871,7 +2006,7 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                         <Id>1a72cff7-3c7e-41bc-bad2-f6f70bedfef2</Id>
                         <Parent z:Ref="i60" />
                         <PropertyValues>
-                          <PropertyValue z:Id="i211">
+                          <PropertyValue z:Id="i223">
                             <PropertyName>Condition</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>bool_documentTn</_expression>
@@ -1886,19 +2021,19 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                         <Text>Обработка по типу документа</Text>
                         <_activityFullName>BR.Core.Base.If</_activityFullName>
                       </AbstractStep>
-                      <AbstractStep z:Id="i212" i:type="ExecutedStep">
+                      <AbstractStep z:Id="i224" i:type="ExecutedStep">
                         <Childs />
                         <Id>9a450f74-f3b6-4bc5-b7a3-401daa510a6a</Id>
                         <Parent z:Ref="i60" />
                         <PropertyValues>
-                          <PropertyValue z:Id="i213">
+                          <PropertyValue z:Id="i225">
                             <PropertyName>Value</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>int_lastdocNumber + 1</_expression>
                             <_value i:nil="true" />
                             <_xpathSettings xmlns:d15p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                           </PropertyValue>
-                          <PropertyValue z:Id="i214">
+                          <PropertyValue z:Id="i226">
                             <PropertyName>To</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>int_lastdocNumber</_expression>
@@ -1917,14 +2052,14 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                     <Id>75e276df-a1a6-4b7b-a2bc-16466289cc17</Id>
                     <Parent z:Ref="i27" />
                     <PropertyValues>
-                      <PropertyValue z:Id="i215">
+                      <PropertyValue z:Id="i227">
                         <PropertyName>Condition</PropertyName>
                         <_dataType>Expression</_dataType>
                         <_expression>int_lastdocNumber &lt;= list_documents.Count</_expression>
                         <_value i:nil="true" />
                         <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                       </PropertyValue>
-                      <PropertyValue z:Id="i216">
+                      <PropertyValue z:Id="i228">
                         <PropertyName>Counter</PropertyName>
                         <_dataType>Expression</_dataType>
                         <_expression></_expression>
@@ -1939,33 +2074,33 @@ Regex.IsMatch(list_documents[int_lastdocNumber + 1], @"подписан[\s\S]*п
                     <Text></Text>
                     <_activityFullName>BR.Core.Base.LoopWhile</_activityFullName>
                   </AbstractStep>
-                  <AbstractStep z:Id="i217" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i229" i:type="ExecutedStep">
                     <Childs />
                     <Id>fa5d61a1-36fa-42ec-8bdc-12add1f1d220</Id>
                     <Parent z:Ref="i27" />
                     <PropertyValues>
-                      <PropertyValue z:Id="i218">
+                      <PropertyValue z:Id="i230">
                         <PropertyName>DataTable</PropertyName>
                         <_dataType>Expression</_dataType>
                         <_expression>dt_output</_expression>
                         <_value i:nil="true" />
                         <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                       </PropertyValue>
-                      <PropertyValue z:Id="i219">
+                      <PropertyValue z:Id="i231">
                         <PropertyName>AddHeaders</PropertyName>
                         <_dataType>Value</_dataType>
                         <_expression i:nil="true" />
                         <_value xmlns:d13p1="http://www.w3.org/2001/XMLSchema" i:type="d13p1:boolean">false</_value>
                         <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                       </PropertyValue>
-                      <PropertyValue z:Id="i220">
+                      <PropertyValue z:Id="i232">
                         <PropertyName>SheetName</PropertyName>
                         <_dataType>Value</_dataType>
                         <_expression i:nil="true" />
                         <_value xmlns:d13p1="http://www.w3.org/2001/XMLSchema" i:type="d13p1:string">Лист1</_value>
                         <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                       </PropertyValue>
-                      <PropertyValue z:Id="i221">
+                      <PropertyValue z:Id="i233">
                         <PropertyName>FileName</PropertyName>
                         <_dataType>Expression</_dataType>
                         <_expression>Path.Combine($"{dict_config["OutputFolderPath"]}", 
@@ -1981,12 +2116,12 @@ DateTime.Today.ToString("yyyy.MM"), $"{DateTime.Today.ToString("yyyy.MM.dd")}.xl
                     <Text></Text>
                     <_activityFullName>Activities.Office.Excel.AppendRange</_activityFullName>
                   </AbstractStep>
-                  <AbstractStep z:Id="i222" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i234" i:type="ExecutedStep">
                     <Childs />
                     <Id>afc13cbc-586c-4c98-aea0-6b999d9ddca4</Id>
                     <Parent z:Ref="i27" />
                     <PropertyValues>
-                      <PropertyValue z:Id="i223">
+                      <PropertyValue z:Id="i235">
                         <PropertyName>FilePath</PropertyName>
                         <_dataType>Expression</_dataType>
                         <_expression>$"{dict_parameters["filePath"]}"</_expression>
@@ -2001,12 +2136,12 @@ DateTime.Today.ToString("yyyy.MM"), $"{DateTime.Today.ToString("yyyy.MM.dd")}.xl
                     <Text>Удалить docx из input папки</Text>
                     <_activityFullName>Activities.Files.DeleteFile</_activityFullName>
                   </AbstractStep>
-                  <AbstractStep z:Id="i224" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i236" i:type="ExecutedStep">
                     <Childs />
                     <Id>398bd42f-435a-4ad7-8766-fa0cce421216</Id>
                     <Parent z:Ref="i27" />
                     <PropertyValues>
-                      <PropertyValue z:Id="i225">
+                      <PropertyValue z:Id="i237">
                         <PropertyName>FilePath</PropertyName>
                         <_dataType>Expression</_dataType>
                         <_expression>Path.Combine($"{dict_config["InputPdfFolder"]}", 
@@ -2044,29 +2179,29 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
             <Text></Text>
             <_activityFullName>BR.Core.Base.Try</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i226" i:type="ExecutedStep">
+          <AbstractStep z:Id="i238" i:type="ExecutedStep">
             <Childs>
-              <AbstractStep z:Id="i227" i:type="ExecutedStep">
+              <AbstractStep z:Id="i239" i:type="ExecutedStep">
                 <Childs>
-                  <AbstractStep z:Id="i228" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i240" i:type="ExecutedStep">
                     <Childs>
-                      <AbstractStep z:Id="i229" i:type="ExecutedStep">
+                      <AbstractStep z:Id="i241" i:type="ExecutedStep">
                         <Childs>
-                          <AbstractStep z:Id="i230" i:type="ExecutedStep">
+                          <AbstractStep z:Id="i242" i:type="ExecutedStep">
                             <Childs>
-                              <AbstractStep z:Id="i231" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i243" i:type="ExecutedStep">
                                 <Childs />
                                 <Id>a0232963-32c7-4790-8a78-7852bf617846</Id>
-                                <Parent z:Ref="i230" />
+                                <Parent z:Ref="i242" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i232">
+                                  <PropertyValue z:Id="i244">
                                     <PropertyName>Value</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>$"{error.GetType()}: {errorMessage}"</_expression>
                                     <_value i:nil="true" />
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i233">
+                                  <PropertyValue z:Id="i245">
                                     <PropertyName>To</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>dict_config["MessageBody"]</_expression>
@@ -2081,44 +2216,44 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                                 <Text>Тело сообщения - Бизнес-ошибка</Text>
                                 <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                               </AbstractStep>
-                              <AbstractStep z:Id="i234" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i246" i:type="ExecutedStep">
                                 <Childs />
                                 <Id>320e473a-0f1f-4e6d-95a6-7374b5c9ee45</Id>
-                                <Parent z:Ref="i230" />
+                                <Parent z:Ref="i242" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i235">
+                                  <PropertyValue z:Id="i247">
                                     <PropertyName>FilePath</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>@"FrameworkScripts\Notification.pix"</_expression>
                                     <_value i:nil="true" />
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i236">
+                                  <PropertyValue z:Id="i248">
                                     <PropertyName>Parameters</PropertyName>
                                     <_dataType>Value</_dataType>
                                     <_expression i:nil="true" />
                                     <_value xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d19p1:ArrayOfArgumentItem">
-                                      <d19p1:ArgumentItem z:Id="i237">
+                                      <d19p1:ArgumentItem z:Id="i249">
                                         <d19p1:ArgumentName>dict_config</d19p1:ArgumentName>
                                         <d19p1:Expression>dict_config</d19p1:Expression>
                                         <d19p1:Type>Dictionary&lt;System.String, System.Object&gt;</d19p1:Type>
                                       </d19p1:ArgumentItem>
-                                      <d19p1:ArgumentItem z:Id="i238">
+                                      <d19p1:ArgumentItem z:Id="i250">
                                         <d19p1:ArgumentName>int_notifyType</d19p1:ArgumentName>
                                         <d19p1:Expression>2</d19p1:Expression>
                                         <d19p1:Type>System.Int32</d19p1:Type>
                                       </d19p1:ArgumentItem>
-                                      <d19p1:ArgumentItem z:Id="i239">
+                                      <d19p1:ArgumentItem z:Id="i251">
                                         <d19p1:ArgumentName>list_attaches</d19p1:ArgumentName>
                                         <d19p1:Expression>new List&lt;string&gt;{}</d19p1:Expression>
                                         <d19p1:Type>List&lt;System.String&gt;</d19p1:Type>
                                       </d19p1:ArgumentItem>
-                                      <d19p1:ArgumentItem z:Id="i240">
+                                      <d19p1:ArgumentItem z:Id="i252">
                                         <d19p1:ArgumentName>sec_mailPassword</d19p1:ArgumentName>
                                         <d19p1:Expression>dict_secureData["MailCred"]</d19p1:Expression>
                                         <d19p1:Type>System.Security.SecureString</d19p1:Type>
                                       </d19p1:ArgumentItem>
-                                      <d19p1:ArgumentItem z:Id="i241">
+                                      <d19p1:ArgumentItem z:Id="i253">
                                         <d19p1:ArgumentName>bool_takeScreenshot</d19p1:ArgumentName>
                                         <d19p1:Expression>true</d19p1:Expression>
                                         <d19p1:Type>System.Boolean</d19p1:Type>
@@ -2126,7 +2261,7 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                                     </_value>
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i242">
+                                  <PropertyValue z:Id="i254">
                                     <PropertyName>Timeout</PropertyName>
                                     <_dataType>Value</_dataType>
                                     <_expression i:nil="true" />
@@ -2143,7 +2278,7 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                               </AbstractStep>
                             </Childs>
                             <Id>776b3de4-6542-4371-aa94-7325deee4975</Id>
-                            <Parent z:Ref="i229" />
+                            <Parent z:Ref="i241" />
                             <PropertyValues />
                             <SelectedOptionId i:nil="true" />
                             <EnableStatus>true</EnableStatus>
@@ -2152,10 +2287,10 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                             <Text></Text>
                             <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                           </AbstractStep>
-                          <AbstractStep z:Id="i243" i:type="ExecutedStep">
+                          <AbstractStep z:Id="i255" i:type="ExecutedStep">
                             <Childs />
                             <Id>937be649-51d4-41a3-82d8-370d670904d2</Id>
-                            <Parent z:Ref="i229" />
+                            <Parent z:Ref="i241" />
                             <PropertyValues />
                             <SelectedOptionId i:nil="true" />
                             <EnableStatus>true</EnableStatus>
@@ -2166,9 +2301,9 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                           </AbstractStep>
                         </Childs>
                         <Id>ef9d93de-dbda-4de5-89e6-143a4662c8de</Id>
-                        <Parent z:Ref="i228" />
+                        <Parent z:Ref="i240" />
                         <PropertyValues>
-                          <PropertyValue z:Id="i244">
+                          <PropertyValue z:Id="i256">
                             <PropertyName>Condition</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>int_transactionRetryCounter==int_maxTransactionRetry</_expression>
@@ -2183,19 +2318,19 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                         <Text></Text>
                         <_activityFullName>BR.Core.Base.If</_activityFullName>
                       </AbstractStep>
-                      <AbstractStep z:Id="i245" i:type="ExecutedStep">
+                      <AbstractStep z:Id="i257" i:type="ExecutedStep">
                         <Childs />
                         <Id>45c14d3d-7a48-4b5b-9072-b72d7e0419a6</Id>
-                        <Parent z:Ref="i228" />
+                        <Parent z:Ref="i240" />
                         <PropertyValues>
-                          <PropertyValue z:Id="i246">
+                          <PropertyValue z:Id="i258">
                             <PropertyName>Text</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>errorInfo</_expression>
                             <_value i:nil="true" />
                             <_xpathSettings xmlns:d15p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                           </PropertyValue>
-                          <PropertyValue z:Id="i247">
+                          <PropertyValue z:Id="i259">
                             <PropertyName>Exception</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>new BusinessRuleException($"{error.GetType()}: {errorMessage}")</_expression>
@@ -2212,7 +2347,7 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                       </AbstractStep>
                     </Childs>
                     <Id>a17ec75a-637a-43dd-b2bb-c912f7dcce0e</Id>
-                    <Parent z:Ref="i227" />
+                    <Parent z:Ref="i239" />
                     <PropertyValues />
                     <SelectedOptionId i:nil="true" />
                     <EnableStatus>true</EnableStatus>
@@ -2221,25 +2356,25 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                     <Text></Text>
                     <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                   </AbstractStep>
-                  <AbstractStep z:Id="i248" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i260" i:type="ExecutedStep">
                     <Childs>
-                      <AbstractStep z:Id="i249" i:type="ExecutedStep">
+                      <AbstractStep z:Id="i261" i:type="ExecutedStep">
                         <Childs>
-                          <AbstractStep z:Id="i250" i:type="ExecutedStep">
+                          <AbstractStep z:Id="i262" i:type="ExecutedStep">
                             <Childs>
-                              <AbstractStep z:Id="i251" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i263" i:type="ExecutedStep">
                                 <Childs />
                                 <Id>093789a2-623d-4187-ae5e-9c6ce6fc2071</Id>
-                                <Parent z:Ref="i250" />
+                                <Parent z:Ref="i262" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i252">
+                                  <PropertyValue z:Id="i264">
                                     <PropertyName>Value</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>$"{error.GetType()}: {errorMessage}\n{errorSource}"</_expression>
                                     <_value i:nil="true" />
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i253">
+                                  <PropertyValue z:Id="i265">
                                     <PropertyName>To</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>dict_config["MessageBody"]</_expression>
@@ -2254,44 +2389,44 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                                 <Text>Тело сообщения - Системная ошибка</Text>
                                 <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                               </AbstractStep>
-                              <AbstractStep z:Id="i254" i:type="ExecutedStep">
+                              <AbstractStep z:Id="i266" i:type="ExecutedStep">
                                 <Childs />
                                 <Id>e293dccc-9cdd-464c-a9fa-23b0317730e0</Id>
-                                <Parent z:Ref="i250" />
+                                <Parent z:Ref="i262" />
                                 <PropertyValues>
-                                  <PropertyValue z:Id="i255">
+                                  <PropertyValue z:Id="i267">
                                     <PropertyName>FilePath</PropertyName>
                                     <_dataType>Expression</_dataType>
                                     <_expression>@"FrameworkScripts\Notification.pix"</_expression>
                                     <_value i:nil="true" />
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i256">
+                                  <PropertyValue z:Id="i268">
                                     <PropertyName>Parameters</PropertyName>
                                     <_dataType>Value</_dataType>
                                     <_expression i:nil="true" />
                                     <_value xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d19p1:ArrayOfArgumentItem">
-                                      <d19p1:ArgumentItem z:Id="i257">
+                                      <d19p1:ArgumentItem z:Id="i269">
                                         <d19p1:ArgumentName>dict_config</d19p1:ArgumentName>
                                         <d19p1:Expression>dict_config</d19p1:Expression>
                                         <d19p1:Type>Dictionary&lt;System.String, System.Object&gt;</d19p1:Type>
                                       </d19p1:ArgumentItem>
-                                      <d19p1:ArgumentItem z:Id="i258">
+                                      <d19p1:ArgumentItem z:Id="i270">
                                         <d19p1:ArgumentName>int_notifyType</d19p1:ArgumentName>
                                         <d19p1:Expression>3</d19p1:Expression>
                                         <d19p1:Type>System.Int32</d19p1:Type>
                                       </d19p1:ArgumentItem>
-                                      <d19p1:ArgumentItem z:Id="i259">
+                                      <d19p1:ArgumentItem z:Id="i271">
                                         <d19p1:ArgumentName>list_attaches</d19p1:ArgumentName>
                                         <d19p1:Expression>new List&lt;string&gt;{}</d19p1:Expression>
                                         <d19p1:Type>List&lt;System.String&gt;</d19p1:Type>
                                       </d19p1:ArgumentItem>
-                                      <d19p1:ArgumentItem z:Id="i260">
+                                      <d19p1:ArgumentItem z:Id="i272">
                                         <d19p1:ArgumentName>sec_mailPassword</d19p1:ArgumentName>
                                         <d19p1:Expression>dict_secureData["MailCred"]</d19p1:Expression>
                                         <d19p1:Type>System.Security.SecureString</d19p1:Type>
                                       </d19p1:ArgumentItem>
-                                      <d19p1:ArgumentItem z:Id="i261">
+                                      <d19p1:ArgumentItem z:Id="i273">
                                         <d19p1:ArgumentName>bool_takeScreenshot</d19p1:ArgumentName>
                                         <d19p1:Expression>true</d19p1:Expression>
                                         <d19p1:Type>System.Boolean</d19p1:Type>
@@ -2299,7 +2434,7 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                                     </_value>
                                     <_xpathSettings xmlns:d19p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                                   </PropertyValue>
-                                  <PropertyValue z:Id="i262">
+                                  <PropertyValue z:Id="i274">
                                     <PropertyName>Timeout</PropertyName>
                                     <_dataType>Value</_dataType>
                                     <_expression i:nil="true" />
@@ -2316,7 +2451,7 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                               </AbstractStep>
                             </Childs>
                             <Id>a8a5d05c-429b-42c1-ac3d-17cf08c372a4</Id>
-                            <Parent z:Ref="i249" />
+                            <Parent z:Ref="i261" />
                             <PropertyValues />
                             <SelectedOptionId i:nil="true" />
                             <EnableStatus>true</EnableStatus>
@@ -2325,10 +2460,10 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                             <Text></Text>
                             <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
                           </AbstractStep>
-                          <AbstractStep z:Id="i263" i:type="ExecutedStep">
+                          <AbstractStep z:Id="i275" i:type="ExecutedStep">
                             <Childs />
                             <Id>4fea87f8-4048-4b93-a638-d38684aedc69</Id>
-                            <Parent z:Ref="i249" />
+                            <Parent z:Ref="i261" />
                             <PropertyValues />
                             <SelectedOptionId i:nil="true" />
                             <EnableStatus>true</EnableStatus>
@@ -2339,9 +2474,9 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                           </AbstractStep>
                         </Childs>
                         <Id>a70ecd66-3cd2-49fb-98dd-27c4b4a24517</Id>
-                        <Parent z:Ref="i248" />
+                        <Parent z:Ref="i260" />
                         <PropertyValues>
-                          <PropertyValue z:Id="i264">
+                          <PropertyValue z:Id="i276">
                             <PropertyName>Condition</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>int_transactionRetryCounter==int_maxTransactionRetry</_expression>
@@ -2356,19 +2491,19 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                         <Text></Text>
                         <_activityFullName>BR.Core.Base.If</_activityFullName>
                       </AbstractStep>
-                      <AbstractStep z:Id="i265" i:type="ExecutedStep">
+                      <AbstractStep z:Id="i277" i:type="ExecutedStep">
                         <Childs />
                         <Id>54081471-543a-4aef-8e60-3ade47739b7f</Id>
-                        <Parent z:Ref="i248" />
+                        <Parent z:Ref="i260" />
                         <PropertyValues>
-                          <PropertyValue z:Id="i266">
+                          <PropertyValue z:Id="i278">
                             <PropertyName>Text</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>$"{error.GetType()}: {errorMessage}\n{errorSource}"</_expression>
                             <_value i:nil="true" />
                             <_xpathSettings xmlns:d15p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                           </PropertyValue>
-                          <PropertyValue z:Id="i267">
+                          <PropertyValue z:Id="i279">
                             <PropertyName>Exception</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>errorInfo</_expression>
@@ -2385,7 +2520,7 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                       </AbstractStep>
                     </Childs>
                     <Id>0e360cd6-78a9-4054-bdce-0b52f58ba1be</Id>
-                    <Parent z:Ref="i227" />
+                    <Parent z:Ref="i239" />
                     <PropertyValues />
                     <SelectedOptionId i:nil="true" />
                     <EnableStatus>true</EnableStatus>
@@ -2396,9 +2531,9 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
                   </AbstractStep>
                 </Childs>
                 <Id>94891de7-b326-4c1f-b27f-de9090ec399f</Id>
-                <Parent z:Ref="i226" />
+                <Parent z:Ref="i238" />
                 <PropertyValues>
-                  <PropertyValue z:Id="i268">
+                  <PropertyValue z:Id="i280">
                     <PropertyName>Condition</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>error.GetType() == new BusinessRuleException().GetType()</_expression>
@@ -2417,28 +2552,28 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
             <Id>de85cde0-2700-4878-8d6e-c8658f391957</Id>
             <Parent z:Ref="i7" />
             <PropertyValues>
-              <PropertyValue z:Id="i269">
+              <PropertyValue z:Id="i281">
                 <PropertyName>Message</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>errorMessage</_expression>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i270">
+              <PropertyValue z:Id="i282">
                 <PropertyName>StackTrace</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression></_expression>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i271">
+              <PropertyValue z:Id="i283">
                 <PropertyName>Source</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>errorSource</_expression>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i272">
+              <PropertyValue z:Id="i284">
                 <PropertyName>Exception</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>error</_expression>
@@ -2453,7 +2588,7 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
             <Text></Text>
             <_activityFullName>BR.Core.Base.Catch</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i273" i:type="ExecutedStep">
+          <AbstractStep z:Id="i285" i:type="ExecutedStep">
             <Childs />
             <Id>0cbb9939-6977-4a31-aadd-4b555711f704</Id>
             <Parent z:Ref="i7" />
@@ -2494,43 +2629,43 @@ Path.ChangeExtension($"{dict_config["filePath"]}", ".pdf"))</_expression>
     <d2p1:string>PIX.Core.Exceptions</d2p1:string>
   </Namespaces>
   <Params>
-    <Parameter z:Id="i274">
+    <Parameter z:Id="i286">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_config</Name>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i275">
+    <Parameter z:Id="i287">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_paths</Name>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i276">
+    <Parameter z:Id="i288">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_secureData</Name>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Security.SecureString, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i277">
+    <Parameter z:Id="i289">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>str_transactionItem</Name>
       <TypeString>System.String</TypeString>
     </Parameter>
-    <Parameter z:Id="i278">
+    <Parameter z:Id="i290">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>str_transactionID</Name>
       <TypeString>System.String</TypeString>
     </Parameter>
-    <Parameter z:Id="i279">
+    <Parameter z:Id="i291">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>int_maxTransactionRetry</Name>
       <TypeString>System.Int32</TypeString>
     </Parameter>
-    <Parameter z:Id="i280">
+    <Parameter z:Id="i292">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>int_transactionRetryCounter</Name>
