@@ -572,7 +572,7 @@ STATE 5: Завершение</Text>
                                 <_value xmlns:d17p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d17p1:ArrayOfArgumentItem">
                                   <d17p1:ArgumentItem z:Id="i69">
                                     <d17p1:ArgumentName>list_processesToKill</d17p1:ArgumentName>
-                                    <d17p1:Expression>new List&lt;String&gt; {"chrome", "excel"}</d17p1:Expression>
+                                    <d17p1:Expression>new List&lt;String&gt; {}</d17p1:Expression>
                                     <d17p1:Type>List&lt;System.String&gt;</d17p1:Type>
                                   </d17p1:ArgumentItem>
                                 </_value>
@@ -2873,7 +2873,7 @@ STATE 5: Завершение</Text>
                                 <_value xmlns:d17p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d17p1:ArrayOfArgumentItem">
                                   <d17p1:ArgumentItem z:Id="i325">
                                     <d17p1:ArgumentName>list_processesToKill</d17p1:ArgumentName>
-                                    <d17p1:Expression>new List&lt;String&gt; {"chrome", "excel"}</d17p1:Expression>
+                                    <d17p1:Expression>new List&lt;String&gt; {}</d17p1:Expression>
                                     <d17p1:Type>List&lt;System.String&gt;</d17p1:Type>
                                   </d17p1:ArgumentItem>
                                 </_value>
@@ -3052,7 +3052,7 @@ STATE 5: Завершение</Text>
                                         <_value xmlns:d21p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d21p1:ArrayOfArgumentItem">
                                           <d21p1:ArgumentItem z:Id="i346">
                                             <d21p1:ArgumentName>list_processesToKill</d21p1:ArgumentName>
-                                            <d21p1:Expression>new List&lt;String&gt; {"chrome", "excel"}</d21p1:Expression>
+                                            <d21p1:Expression>new List&lt;String&gt; {}</d21p1:Expression>
                                             <d21p1:Type>List&lt;System.String&gt;</d21p1:Type>
                                           </d21p1:ArgumentItem>
                                         </_value>
@@ -3504,7 +3504,7 @@ STATE 5: Завершение</Text>
                                 <_value xmlns:d17p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d17p1:ArrayOfArgumentItem">
                                   <d17p1:ArgumentItem z:Id="i394">
                                     <d17p1:ArgumentName>list_processesToKill</d17p1:ArgumentName>
-                                    <d17p1:Expression>new List&lt;String&gt;{"chrome", "excel"}</d17p1:Expression>
+                                    <d17p1:Expression>new List&lt;String&gt;{}</d17p1:Expression>
                                     <d17p1:Type>List&lt;System.String&gt;</d17p1:Type>
                                   </d17p1:ArgumentItem>
                                 </_value>
@@ -3961,13 +3961,13 @@ STATE 5: Завершение</Text>
       <TypeString>System.String</TypeString>
     </Parameter>
     <Parameter z:Id="i436">
-      <DefaultValueExpression>false</DefaultValueExpression>
+      <DefaultValueExpression>true</DefaultValueExpression>
       <Description>bool_useDispatcher==true, bool_usePerformer==false - робот работает в режиме создания транзакций в целевую очередь.</Description>
       <Name>bool_useDispatcher</Name>
       <TypeString>System.Boolean</TypeString>
     </Parameter>
     <Parameter z:Id="i437">
-      <DefaultValueExpression>true</DefaultValueExpression>
+      <DefaultValueExpression>false</DefaultValueExpression>
       <Description>bool_usePerformer==true, bool_useDispatcher==false - робот работает в режиме обработки транзакций в целевой очереди.</Description>
       <Name>bool_usePerformer</Name>
       <TypeString>System.Boolean</TypeString>
